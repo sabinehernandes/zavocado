@@ -8,7 +8,7 @@ export default function ProductsPage() {
           Enjoy our finest avocado selection
         </h1>
       </main>
-      <section className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-3 gap-3 m-10">
+      <section className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-2 gap-3 m-10">
         <ProductCard />
         <ProductCard />
         <ProductCard />
