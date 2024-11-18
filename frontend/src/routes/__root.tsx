@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
-import App from "../App";
+import Navbar from "../components/shared/Navbar";
+import Footer from "../components/shared/Footer";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -9,8 +10,11 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <React.Fragment>
-      <App />
-      <Outlet />
+      <Navbar />
+      <div className="flex-grow">
+        <Outlet />
+      </div>
+      <Footer />
     </React.Fragment>
   );
 }
