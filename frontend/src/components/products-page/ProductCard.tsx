@@ -37,7 +37,7 @@ const ProductCard: React.FC<ProductCardProps> = (
         <p className="text-gray-600">{description}</p> */}
         <div className="mt-2 bg-white">
           <label htmlFor="quantity" className="mr-2 bg-white">
-            Quantity:
+            Quantity (kg)
           </label>
           <input
             type="number"
