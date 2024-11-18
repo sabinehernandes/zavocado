@@ -45,7 +45,6 @@ const json = [
 export function ProductsList() {
   return (
     <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">Name</TableHead>
