@@ -21,12 +21,12 @@ export default function Navbar() {
           >
             Products
           </Link>
-          <a
-            href="#signin"
+          <Link
+            to="/admin"
             className="hover:text-lime-800 transition duration-200"
           >
             Sign In
-          </a>
+          </Link>
         </div>
       </nav>
     </>
