@@ -1,6 +1,7 @@
 import { RevenueChart } from "@/components/admin/RevenueChart";
 import { ItemsSoldChart } from "./ItemsSoldChart";
 import { ProductsList } from "./ProductsList";
+import CreateProductForm from "./CreateProductForm";
 
 export default function AdminPage() {
   return (
@@ -38,6 +39,7 @@ export default function AdminPage() {
           <h2 className="text-2xl font-bold text-stone-600 tracking-wide">
             Add new product
           </h2>
+          <CreateProductForm />
         </div>
       </section>
     </>
