@@ -12,7 +12,7 @@ export default function Navbar() {
         </div>
         <div className="flex space-x-4">
           <a
-            href="#products"
+            href="/products"
             className="px-2 rounded hover:text-white hover:bg-lime-800 hover:border-lime-800 hover:rounded-2 transition duration-200"
           >
             Products
