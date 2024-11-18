@@ -1,5 +1,6 @@
 import { RevenueChart } from "@/components/admin/RevenueChart";
 import { ItemsSoldChart } from "./ItemsSoldChart";
+import { ProductsList } from "./ProductsList";
 
 export default function AdminPage() {
   return (
@@ -26,13 +27,14 @@ export default function AdminPage() {
           <ItemsSoldChart />
         </div>
       </section>
-      <section>
-        <div className="">
+      <section className="flex m-10 gap-4">
+        <div className="w-1/2">
           <h2 className="text-2xl font-bold text-stone-600 tracking-wide">
             Your products
           </h2>
+          <ProductsList />
         </div>
-        <div className="">
+        <div className="w-1/2">
           <h2 className="text-2xl font-bold text-stone-600 tracking-wide">
             Add new product
           </h2>
