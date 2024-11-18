@@ -9,48 +9,36 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const invoices = [
+const json = [
   {
-    invoice: "INV001",
-    paymentStatus: "Paid",
-    totalAmount: "$250.00",
-    paymentMethod: "Credit Card",
+    avocadoName: "Bacon",
+    price: "30",
+    description:
+      "A smoother-skinned variety with thin, light green skin and a milder less buttery flavor.",
   },
   {
-    invoice: "INV002",
-    paymentStatus: "Pending",
-    totalAmount: "$150.00",
-    paymentMethod: "PayPal",
+    avocadoName: "Bacon",
+    price: "30",
+    description:
+      "A smoother-skinned variety with thin, light green skin and a milder less buttery flavor.",
   },
   {
-    invoice: "INV003",
-    paymentStatus: "Unpaid",
-    totalAmount: "$350.00",
-    paymentMethod: "Bank Transfer",
+    avocadoName: "Bacon",
+    price: "30",
+    description:
+      "A smoother-skinned variety with thin, light green skin and a milder less buttery flavor.",
   },
   {
-    invoice: "INV004",
-    paymentStatus: "Paid",
-    totalAmount: "$450.00",
-    paymentMethod: "Credit Card",
+    avocadoName: "Bacon",
+    price: "30",
+    description:
+      "A smoother-skinned variety with thin, light green skin and a milder less buttery flavor.",
   },
   {
-    invoice: "INV005",
-    paymentStatus: "Paid",
-    totalAmount: "$550.00",
-    paymentMethod: "PayPal",
-  },
-  {
-    invoice: "INV006",
-    paymentStatus: "Pending",
-    totalAmount: "$200.00",
-    paymentMethod: "Bank Transfer",
-  },
-  {
-    invoice: "INV007",
-    paymentStatus: "Unpaid",
-    totalAmount: "$300.00",
-    paymentMethod: "Credit Card",
+    avocadoName: "Bacon",
+    price: "30",
+    description:
+      "A smoother-skinned variety with thin, light green skin and a milder less buttery flavor.",
   },
 ];
 
@@ -60,27 +48,26 @@ export function ProductsList() {
       <TableCaption>A list of your recent invoices.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[100px]">Invoice</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
+          <TableHead className="w-[100px]">Name</TableHead>
+          <TableHead>Price</TableHead>
+          <TableHead>Description</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {invoices.map((invoice) => (
-          <TableRow key={invoice.invoice}>
-            <TableCell className="font-medium">{invoice.invoice}</TableCell>
-            <TableCell>{invoice.paymentStatus}</TableCell>
-            <TableCell>{invoice.paymentMethod}</TableCell>
-            <TableCell className="text-right">{invoice.totalAmount}</TableCell>
+        {json.map((data) => (
+          <TableRow key={data.avocadoName}>
+            <TableCell className="font-medium">{data.avocadoName}</TableCell>
+            <TableCell>{data.price}</TableCell>
+            <TableCell>{data.description}</TableCell>
+            {/* <TableCell className="text-right">{invoice.totalAmount}</TableCell> */}
           </TableRow>
         ))}
       </TableBody>
       <TableFooter>
-        <TableRow>
+        {/* <TableRow>
           <TableCell colSpan={3}>Total</TableCell>
           <TableCell className="text-right">$2,500.00</TableCell>
-        </TableRow>
+        </TableRow> */}
       </TableFooter>
     </Table>
   );
