@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 export default function Navbar() {
   return (
     <>
@@ -8,15 +10,17 @@ export default function Navbar() {
             alt="Avocado logo"
             className="w-5 h-5 bg-gray-50"
           />
-          <span className="text-lg font-semibold bg-gray-50">ZAVOCADO</span>
+          <Link to="/landing" className="text-lg font-semibold bg-gray-50">
+            ZAVOCADO
+          </Link>
         </div>
         <div className="flex space-x-4">
-          <a
-            href="/products"
+          <Link
+            to="/products"
             className="px-2 rounded hover:text-white hover:bg-lime-800 hover:border-lime-800 hover:rounded-2 transition duration-200"
           >
             Products
-          </a>
+          </Link>
           <a
             href="#signin"
             className="hover:text-lime-800 transition duration-200"
