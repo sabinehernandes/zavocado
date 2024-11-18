@@ -23,7 +23,7 @@ export default function MainNavigation() {
       <h2 className="text-center text-3xl text-stone-600 font-light my-12">
         Something about the beauty of organic avocados
       </h2>
-      <div className="flex items-center justify-center px-10 space-x-8">
+      <div className="flex items-center justify-center px-10 space-x-8 mb-10">
         <div className="w-1/2">
           <img
             src="public/landing-page/farm.jpg"
@@ -31,7 +31,7 @@ export default function MainNavigation() {
             className="w-full h-96 object-cover rounded"
           />
         </div>
-        <div className="w-1/2 space-y-4 leading-relaxed text-center">
+        <div className="w-1/2 space-y-4 leading-relaxed text-center font-light text-stone-600">
           <h3 className="text-3xl">Our products</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
