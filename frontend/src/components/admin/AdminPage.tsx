@@ -14,17 +14,14 @@ export default function AdminPage() {
           This is the admin dashboard. You can manage all the content here.
         </p>
       </main>
+      <h2 className=" ml-10 mt-10 mb-4 text-3xl text-center font-bold text-stone-600 tracking-wide">
+        Dashboard
+      </h2>
       <section className="flex m-10 gap-4">
         <div className="w-1/2">
-          <h2 className="text-2xl font-bold text-stone-600 tracking-wide mb-4">
-            Revenue
-          </h2>
           <RevenueChart />
         </div>
         <div className="w-1/2">
-          <h2 className="text-2xl font-bold text-stone-600 tracking-wide mb-4">
-            Top products
-          </h2>
           <ItemsSoldChart />
         </div>
       </section>
