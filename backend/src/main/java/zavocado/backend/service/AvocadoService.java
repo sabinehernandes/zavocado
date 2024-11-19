@@ -1,5 +1,6 @@
 package zavocado.backend.service;
 
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import zavocado.backend.model.Avocado;
 import zavocado.backend.model.AvocadoDbRepository;
@@ -24,6 +25,7 @@ public class AvocadoService {
         return repository.findAll();
     }
 
+    @Transactional
     public Avocado save(Avocado avocado) {
         return repository.save(avocado);
     }
