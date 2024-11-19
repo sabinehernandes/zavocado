@@ -53,7 +53,7 @@ public class Controller {
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteAvocado(@PathVariable String id) throws Exception {
         service.deleteById(id);
         return ResponseEntity.noContent().build();
