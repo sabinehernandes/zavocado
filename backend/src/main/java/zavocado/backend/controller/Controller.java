@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import zavocado.backend.dto.AvocadoDto;
 import zavocado.backend.model.Avocado;
+import zavocado.backend.service.AvocadoService;
 
 import java.util.List;
 
@@ -20,14 +21,19 @@ public class Controller {
 
     @GetMapping
     public ResponseEntity<List<AvocadoDto>> getAllAvocados() {
-        List<AvocadoDto> avocados = service.getAllAvocados();
-        return ResponseEntity.ok(avocados);
+        List<Avocado> avocados = service.findAll();
+        List<AvocadoDto> responseDto = avocados.stream()
+                .map(this::mapToDto)
+                .toList();
+        return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<AvocadoDto> createAvocado(@Valid @RequestBody AvocadoDto dto) {
-        Avocado avocado = service.create(dto);
-        return new ResponseEntity<>(avocado, HttpStatus.CREATED);
+        Avocado avocado = mapToEntity(dto);
+        Avocado savedAvocado = service.save(avocado);
+        AvocadoDto responseDto = mapToDto(savedAvocado);
+        return new ResponseEntity<>(responseDto, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
@@ -35,7 +41,7 @@ public class Controller {
             @PathVariable String id,
             @Valid @RequestBody AvocadoDto dto) throws Exception {
         Avocado existingAvocado = service.findById(id)
-                .orElseThrow() -> new Exception("Avocado not found. Id: " + id);
+                .orElseThrow(() -> new Exception("Avocado not found. Id: " + id));
 
         existingAvocado.setName(dto.name());
         existingAvocado.setPrice(dto.price());
@@ -49,10 +55,7 @@ public class Controller {
 
     @DeleteMapping("{/id}")
     public ResponseEntity<Void> deleteAvocado(@PathVariable String id) throws Exception {
-        Avocado existingAvocado = service.findById(id)
-                        .orElseThrow() -> new Exception("Avocado not found. Id: " + id);
-
-        service.delete(existingAvocado);
+        service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 }
