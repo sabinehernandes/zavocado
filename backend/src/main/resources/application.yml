@@ -1,8 +1,8 @@
 debug: true
 api:
   base-path: /api
-#  controllers:
-#    expenses: /expenses
+  controllers:
+    avocados: /avocados
 server:
   port: 3000
 spring:

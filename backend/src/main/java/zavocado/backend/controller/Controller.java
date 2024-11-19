@@ -11,7 +11,7 @@ import zavocado.backend.service.AvocadoService;
 import java.util.List;
 
 @RestController
-@RequestMapping("${api.base-path}")
+@RequestMapping("${api.base-path}${api.controllers.avocados}")
 public class Controller {
     private final AvocadoService service;
 
