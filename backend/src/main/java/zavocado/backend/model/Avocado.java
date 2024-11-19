@@ -2,7 +2,6 @@ package zavocado.backend.model;
 
 import jakarta.persistence.*;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 @Entity
@@ -20,10 +19,10 @@ public class Avocado {
 
     private String description;
 
-    @Column(name = "image", columnDefinition = "BLOB")
-    private byte[] image;
+    @Column(name = "image")
+    private String image;
 
-    public Avocado(String id, String name, int price, String description, byte[] image) {
+    public Avocado(String id, String name, int price, String description, String image) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -65,11 +64,11 @@ public class Avocado {
         this.description = description;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -82,6 +81,6 @@ public class Avocado {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price, description, Arrays.hashCode(image));
+        return Objects.hash(id, name, price, description, image);
     }
 }
