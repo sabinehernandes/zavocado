@@ -58,4 +58,24 @@ public class Controller {
         service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    private Avocado mapToEntity(AvocadoDto dto) {
+        Avocado avocado = new Avocado();
+        avocado.setId(dto.id());
+        avocado.setName(dto.name());
+        avocado.setPrice(dto.price());
+        avocado.setDescription(dto.description());
+        avocado.setImage(dto.image());
+        return avocado;
+    }
+
+    private AvocadoDto mapToDto(Avocado avocado) {
+        return new AvocadoDto(
+                avocado.getId(),
+                avocado.getName(),
+                avocado.getPrice(),
+                avocado.getDescription(),
+                avocado.getImage()
+        );
+    }
 }
