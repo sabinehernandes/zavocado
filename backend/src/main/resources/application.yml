@@ -1,0 +1,34 @@
+debug: true
+api:
+  base-path: /api
+#  controllers:
+#    expenses: /expenses
+server:
+  port: 3000
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/zavocado
+    username: sabine
+    password: secret
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+  sql:
+    init:
+      platform: postgresql
+      mode: always
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+  output:
+    ansi:
+      enabled: always
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR
