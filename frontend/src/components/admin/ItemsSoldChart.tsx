@@ -19,49 +19,49 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 287, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 190, fill: "var(--color-other)" },
+  { avocado: "hass", sold: 3750, fill: "var(--color-hass)" },
+  { avocado: "fuerte", sold: 2570, fill: "var(--color-fuerte)" },
+  { avocado: "pinkerton", sold: 2259, fill: "var(--color-pinkerton)" },
+  { avocado: "bacon", sold: 1900, fill: "var(--color-bacon)" },
+  { avocado: "others", sold: 1730, fill: "var(--color-others)" },
 ];
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  sold: {
+    label: "Sold",
   },
-  chrome: {
-    label: "Chrome",
+  hass: {
+    label: "Hass",
     color: "hsl(var(--chart-1))",
   },
-  safari: {
-    label: "Safari",
+  fuerte: {
+    label: "Fuerte",
     color: "hsl(var(--chart-2))",
   },
-  firefox: {
-    label: "Firefox",
+  pinkerton: {
+    label: "Pinkerton",
     color: "hsl(var(--chart-3))",
   },
-  edge: {
-    label: "Edge",
+  bacon: {
+    label: "Bacon",
     color: "hsl(var(--chart-4))",
   },
-  other: {
-    label: "Other",
+  others: {
+    label: "Others",
     color: "hsl(var(--chart-5))",
   },
 } satisfies ChartConfig;
 
 export function ItemsSoldChart() {
   const totalVisitors = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.visitors, 0);
+    return chartData.reduce((acc, curr) => acc + curr.sold, 0);
   }, []);
 
   return (
     <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Donut with Text</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>Avocados Sold (kg)</CardTitle>
+        <CardDescription>January - October 2024</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer
@@ -75,8 +75,8 @@ export function ItemsSoldChart() {
             />
             <Pie
               data={chartData}
-              dataKey="visitors"
-              nameKey="browser"
+              dataKey="sold"
+              nameKey="avocado"
               innerRadius={60}
               strokeWidth={5}
             >
@@ -102,7 +102,7 @@ export function ItemsSoldChart() {
                           y={(viewBox.cy || 0) + 24}
                           className="fill-muted-foreground"
                         >
-                          Visitors
+                          kg sold
                         </tspan>
                       </text>
                     );
@@ -118,7 +118,7 @@ export function ItemsSoldChart() {
           Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
+          Showing total avocados sold for the last 6 months
         </div>
       </CardFooter>
     </Card>
