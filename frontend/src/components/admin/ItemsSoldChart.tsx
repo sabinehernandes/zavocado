@@ -19,11 +19,11 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 const chartData = [
-  { avocado: "hass", sold: 3750, fill: "var(--color-hass)" },
-  { avocado: "fuerte", sold: 2570, fill: "var(--color-fuerte)" },
-  { avocado: "pinkerton", sold: 2259, fill: "var(--color-pinkerton)" },
-  { avocado: "bacon", sold: 1900, fill: "var(--color-bacon)" },
-  { avocado: "others", sold: 1730, fill: "var(--color-others)" },
+  { avocado: "hass", sold: 26.143, fill: "var(--color-hass)" },
+  { avocado: "fuerte", sold: 6.723, fill: "var(--color-fuerte)" },
+  { avocado: "pinkerton", sold: 7.616, fill: "var(--color-pinkerton)" },
+  { avocado: "bacon", sold: 6.075, fill: "var(--color-bacon)" },
+  { avocado: "others", sold: 12.195, fill: "var(--color-others)" },
 ];
 
 const chartConfig = {
