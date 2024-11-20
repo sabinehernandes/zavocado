@@ -34,7 +34,6 @@ export default function CreateProductForm() {
         description,
         image,
       });
-      console.log(`Avocado created successfully. name ${name} img ${image}`);
     }
   };
 

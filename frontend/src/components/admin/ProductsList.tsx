@@ -41,7 +41,6 @@ export function ProductsList() {
   });
 
   const handleRowClick = (id: string) => {
-    console.log("row clicked", id);
     setSelectedRow(selectedRow === id ? null : id);
   };
 
