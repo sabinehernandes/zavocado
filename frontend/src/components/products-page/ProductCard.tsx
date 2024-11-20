@@ -13,10 +13,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
   price,
   description,
 }) => {
+  const fullImageUrl = `${import.meta.env.VITE_IMAGE_BASE_URL}/${imageUrl}`;
+
   return (
     <div className="flex border border-gray-300 bg-white p-4 rounded-lg w-96 h-80 items-center justify-center">
       <div className="w-32 h-32 flex-shrink-0">
-        <img src={imageUrl} className="w-full h-full object-cover" />
+        <img src={fullImageUrl} className="w-full h-full object-cover" />
       </div>
       <div className="flex-1 pl-4 flex flex-col justify-between bg-white">
         <div>
