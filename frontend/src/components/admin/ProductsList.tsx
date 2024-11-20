@@ -49,7 +49,8 @@ export function ProductsList() {
     deleteMutation.mutate(id);
   };
 
-  if (isLoading) return toast.loading("Loading items...");
+  //if (isLoading) return toast.loading("Loading items...");
+  if (isLoading) return <div>Loading items...</div>;
   if (error) return toast.error("Error fetching items. Please try again later");
 
   return (
@@ -69,7 +70,7 @@ export function ProductsList() {
             <TableRow
               key={data.id}
               onClick={() => handleRowClick(data.id)}
-              className={`cursor-pointer ${selectedRow === data.id ? "bg-zinc-100/50" : ""}`}
+              className={`cursor-pointer h-16 ${selectedRow === data.id ? "bg-zinc-100/50" : ""}`}
             >
               <TableCell className="font-medium">{data.name}</TableCell>
               <TableCell>{data.price}</TableCell>
