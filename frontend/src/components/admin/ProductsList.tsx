@@ -10,7 +10,7 @@ import {
 import { deleteAvocado, getAvocados } from "@/services/api";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 interface Avocado {
   id: string;
@@ -50,8 +50,8 @@ export function ProductsList() {
     deleteMutation.mutate(id);
   };
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error loading avocados</p>;
+  if (isLoading) return toast.loading("Loading items...");
+  if (error) return toast.error("Error fetching items. Please try again later");
 
   return (
     <>
