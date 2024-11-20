@@ -10,6 +10,7 @@ import {
 import { deleteAvocado, getAvocados } from "@/services/api";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 interface Avocado {
   id: string;
@@ -53,39 +54,42 @@ export function ProductsList() {
   if (error) return <p>Error loading avocados</p>;
 
   return (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="w-[100px]">Name</TableHead>
-          <TableHead>Price</TableHead>
-          <TableHead>Description</TableHead>
-          <TableHead className="sr-only">Actions</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {avocados?.map((data) => (
-          <TableRow
-            key={data.id}
-            onClick={() => handleRowClick(data.id)}
-            className={`cursor-pointer ${selectedRow === data.id ? "bg-zinc-100/50" : ""}`}
-          >
-            <TableCell className="font-medium">{data.name}</TableCell>
-            <TableCell>{data.price}</TableCell>
-            <TableCell>{data.description}</TableCell>
-            <TableCell>
-              {selectedRow === data.id && (
-                <button
-                  onClick={(event) => handleDelete(data.id, event)}
-                  className="bg-red-700 text-white rounded px-2 py-1"
-                >
-                  Delete
-                </button>
-              )}
-            </TableCell>
+    <>
+      <Toaster />
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px]">Name</TableHead>
+            <TableHead>Price</TableHead>
+            <TableHead>Description</TableHead>
+            <TableHead className="sr-only">Actions</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-      <TableFooter></TableFooter>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {avocados?.map((data) => (
+            <TableRow
+              key={data.id}
+              onClick={() => handleRowClick(data.id)}
+              className={`cursor-pointer ${selectedRow === data.id ? "bg-zinc-100/50" : ""}`}
+            >
+              <TableCell className="font-medium">{data.name}</TableCell>
+              <TableCell>{data.price}</TableCell>
+              <TableCell>{data.description}</TableCell>
+              <TableCell>
+                {selectedRow === data.id && (
+                  <button
+                    onClick={(event) => handleDelete(data.id, event)}
+                    className="bg-red-700 text-white rounded px-2 py-1"
+                  >
+                    Delete
+                  </button>
+                )}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+        <TableFooter></TableFooter>
+      </Table>
+    </>
   );
 }
