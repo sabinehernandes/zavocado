@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="flex-1 pl-4 flex flex-col justify-between bg-white">
         <div>
           <h1 className="text-xl font-bold bg-white">{name}</h1>
-          <p className="text-lg text-gray-700 bg-white">${price}</p>
+          <p className="text-lg text-gray-700 bg-white">${price.toFixed(2)}</p>
           <p className="text-gray-600 bg-white">{description}</p>
         </div>
         <div className="mt-2 bg-white">
