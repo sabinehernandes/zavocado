@@ -22,12 +22,19 @@ export const deleteAvocado = async (id: string) => {
   }
 };
 
-export const createAvocado = async (
-  name: string,
-  price: number,
-  description: string,
-  image: string
-) => {
+interface CreateAvocadoParams {
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+}
+
+export const createAvocado = async ({
+  name,
+  price,
+  description,
+  image,
+}: CreateAvocadoParams) => {
   try {
     const response = await axios.post(base_url, {
       name,
