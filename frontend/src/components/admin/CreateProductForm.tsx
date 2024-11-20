@@ -37,11 +37,6 @@ export default function CreateProductForm() {
     }
   };
 
-  // const { register, handleSubmit } = useForm<IFormInput>();
-  // const onSubmit: SubmitHandler<IFormInput> = (data) => {
-  //   console.log(data);
-  // };
-
   return (
     <form onSubmit={handleSubmit} className="space-y-4 mt-5">
       <div>
