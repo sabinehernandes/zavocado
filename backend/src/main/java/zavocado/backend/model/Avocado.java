@@ -15,14 +15,14 @@ public class Avocado {
 
     private String name;
 
-    private int price;
+    private double price;
 
     private String description;
 
     @Column(name = "image")
     private String image;
 
-    public Avocado(String id, String name, int price, String description, String image) {
+    public Avocado(String id, String name, double price, String description, String image) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -48,11 +48,11 @@ public class Avocado {
         this.name = name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

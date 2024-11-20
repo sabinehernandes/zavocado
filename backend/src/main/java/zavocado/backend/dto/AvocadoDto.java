@@ -1,4 +1,4 @@
 package zavocado.backend.dto;
 
-public record AvocadoDto(String id, String name, int price, String description, String image) {
+public record AvocadoDto(String id, String name, double price, String description, String image) {
 }
