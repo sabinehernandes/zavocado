@@ -8,41 +8,30 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { getAvocados } from "@/services/api";
+import { useQuery } from "@tanstack/react-query";
 
-const json = [
-  {
-    avocadoName: "Bacon",
-    price: "30",
-    description:
-      "A smoother-skinned variety with thin, light green skin and a milder less buttery flavor.",
-  },
-  {
-    avocadoName: "Bacon",
-    price: "30",
-    description:
-      "A smoother-skinned variety with thin, light green skin and a milder less buttery flavor.",
-  },
-  {
-    avocadoName: "Bacon",
-    price: "30",
-    description:
-      "A smoother-skinned variety with thin, light green skin and a milder less buttery flavor.",
-  },
-  {
-    avocadoName: "Bacon",
-    price: "30",
-    description:
-      "A smoother-skinned variety with thin, light green skin and a milder less buttery flavor.",
-  },
-  {
-    avocadoName: "Bacon",
-    price: "30",
-    description:
-      "A smoother-skinned variety with thin, light green skin and a milder less buttery flavor.",
-  },
-];
+interface Avocado {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+}
 
 export function ProductsList() {
+  const {
+    data: avocados,
+    error,
+    isLoading,
+  } = useQuery<Avocado[]>({
+    queryKey: ["avocados"],
+    queryFn: getAvocados,
+  });
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error loading avocados</p>;
+
   return (
     <Table>
       <TableHeader>
@@ -53,21 +42,15 @@ export function ProductsList() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {json.map((data) => (
-          <TableRow key={data.avocadoName}>
-            <TableCell className="font-medium">{data.avocadoName}</TableCell>
+        {avocados?.map((data) => (
+          <TableRow key={data.id}>
+            <TableCell className="font-medium">{data.name}</TableCell>
             <TableCell>{data.price}</TableCell>
             <TableCell>{data.description}</TableCell>
-            {/* <TableCell className="text-right">{invoice.totalAmount}</TableCell> */}
           </TableRow>
         ))}
       </TableBody>
-      <TableFooter>
-        {/* <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
-        </TableRow> */}
-      </TableFooter>
+      <TableFooter></TableFooter>
     </Table>
   );
 }
