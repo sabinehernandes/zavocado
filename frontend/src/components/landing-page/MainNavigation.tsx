@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 export default function MainNavigation() {
   return (
     <>
@@ -10,7 +12,7 @@ export default function MainNavigation() {
           <div className="bg-slate-100">from Zava Farm</div>
         </h3>
         <button className="bg-zinc-500 text-white px-5 py-1 rounded hover:bg-zinc-800">
-          Shop now
+          <Link to="/products">Shop now</Link>
         </button>
       </main>
       <div className="h-80">
@@ -40,7 +42,7 @@ export default function MainNavigation() {
             placeat! Eaque numquam culpa harum asperiores placeat.
           </p>
           <button className="bg-zinc-500 text-white px-5 py-1 rounded hover:bg-zinc-800">
-            Shop now
+            <Link to="/products">Shop now</Link>
           </button>
         </div>
       </div>
