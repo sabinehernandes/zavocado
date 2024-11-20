@@ -10,7 +10,7 @@ export default function Navbar() {
             alt="Avocado logo"
             className="w-5 h-5 bg-gray-50"
           />
-          <Link to="/landing" className="text-lg font-semibold bg-gray-50">
+          <Link to="/" className="text-lg font-semibold bg-gray-50">
             ZAVOCADO
           </Link>
         </div>
