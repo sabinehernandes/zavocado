@@ -43,7 +43,7 @@ const chartConfig = {
 
 export function RevenueChart() {
   return (
-    <Card>
+    <Card className="chart-container">
       <CardHeader className="text-center">
         <CardTitle>Revenue (in €K)</CardTitle>
         <CardDescription>January - October 2024</CardDescription>

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.chart-container {
+  height: 550px;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
