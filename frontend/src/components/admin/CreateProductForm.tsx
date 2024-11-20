@@ -1,6 +1,6 @@
-import { useQueryClient } from "@tanstack/react-query";
+import { createAvocado } from "@/services/api";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
 
 interface IFormInput {
   name: string;
@@ -17,13 +17,33 @@ export default function CreateProductForm() {
 
   const queryClient = useQueryClient();
 
-  const { register, handleSubmit } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log(data);
+  const createAvocadoMutation = useMutation({
+    mutationFn: createAvocado,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["avocados"] });
+    },
+  });
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (name && price && description && image) {
+      createAvocadoMutation.mutate({
+        name,
+        price: Number(price),
+        description,
+        image,
+      });
+      console.log(`Avocado created successfully. name ${name} img ${image}`);
+    }
   };
 
+  // const { register, handleSubmit } = useForm<IFormInput>();
+  // const onSubmit: SubmitHandler<IFormInput> = (data) => {
+  //   console.log(data);
+  // };
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-5">
+    <form onSubmit={handleSubmit} className="space-y-4 mt-5">
       <div>
         <label htmlFor="name" className="block font-medium text-gray-700">
           Name
@@ -31,7 +51,8 @@ export default function CreateProductForm() {
         <input
           type="text"
           id="name"
-          {...register("name", { required: true })}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           className="mt-1 block w-full h-8 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         />
       </div>
@@ -42,7 +63,10 @@ export default function CreateProductForm() {
         <input
           type="number"
           id="price"
-          {...register("price", { required: true })}
+          value={price}
+          onChange={(e) =>
+            setPrice(e.target.value ? Number(e.target.value) : 0)
+          }
           className="mt-1 block w-full h-8 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         />
       </div>
@@ -55,7 +79,8 @@ export default function CreateProductForm() {
         </label>
         <textarea
           id="description"
-          {...register("description", { required: true })}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
           className="mt-1 block w-full h-12 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         />
       </div>
@@ -66,7 +91,8 @@ export default function CreateProductForm() {
         <input
           type="file"
           id="image"
-          {...register("image", { required: true })}
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
           className="mt-1 block w-full h-auto border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         />
       </div>
