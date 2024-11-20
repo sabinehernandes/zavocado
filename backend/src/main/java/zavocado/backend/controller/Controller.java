@@ -65,8 +65,14 @@ public class Controller {
         avocado.setName(dto.name());
         avocado.setPrice(dto.price());
         avocado.setDescription(dto.description());
-        avocado.setImage(dto.image());
+        String correctImage = extractFileName(dto.image());
+        avocado.setImage(correctImage);
         return avocado;
+    }
+
+    private String extractFileName(String imagePath) {
+        if (imagePath == null) return null;
+        return imagePath.replaceAll("^.*[\\\\/]", "");
     }
 
     private AvocadoDto mapToDto(Avocado avocado) {
