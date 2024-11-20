@@ -14,7 +14,6 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as ProductsImport } from './routes/products'
-import { Route as LandingImport } from './routes/landing'
 import { Route as AdminImport } from './routes/admin'
 
 // Create Virtual Routes
@@ -33,12 +32,6 @@ const AboutLazyRoute = AboutLazyImport.update({
 const ProductsRoute = ProductsImport.update({
   id: '/products',
   path: '/products',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const LandingRoute = LandingImport.update({
-  id: '/landing',
-  path: '/landing',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -72,13 +65,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminImport
       parentRoute: typeof rootRoute
     }
-    '/landing': {
-      id: '/landing'
-      path: '/landing'
-      fullPath: '/landing'
-      preLoaderRoute: typeof LandingImport
-      parentRoute: typeof rootRoute
-    }
     '/products': {
       id: '/products'
       path: '/products'
@@ -101,7 +87,6 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/admin': typeof AdminRoute
-  '/landing': typeof LandingRoute
   '/products': typeof ProductsRoute
   '/about': typeof AboutLazyRoute
 }
@@ -109,7 +94,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/admin': typeof AdminRoute
-  '/landing': typeof LandingRoute
   '/products': typeof ProductsRoute
   '/about': typeof AboutLazyRoute
 }
@@ -118,24 +102,22 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
   '/admin': typeof AdminRoute
-  '/landing': typeof LandingRoute
   '/products': typeof ProductsRoute
   '/about': typeof AboutLazyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin' | '/landing' | '/products' | '/about'
+  fullPaths: '/' | '/admin' | '/products' | '/about'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin' | '/landing' | '/products' | '/about'
-  id: '__root__' | '/' | '/admin' | '/landing' | '/products' | '/about'
+  to: '/' | '/admin' | '/products' | '/about'
+  id: '__root__' | '/' | '/admin' | '/products' | '/about'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
   AdminRoute: typeof AdminRoute
-  LandingRoute: typeof LandingRoute
   ProductsRoute: typeof ProductsRoute
   AboutLazyRoute: typeof AboutLazyRoute
 }
@@ -143,7 +125,6 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   AdminRoute: AdminRoute,
-  LandingRoute: LandingRoute,
   ProductsRoute: ProductsRoute,
   AboutLazyRoute: AboutLazyRoute,
 }
@@ -160,7 +141,6 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/admin",
-        "/landing",
         "/products",
         "/about"
       ]
@@ -170,9 +150,6 @@ export const routeTree = rootRoute
     },
     "/admin": {
       "filePath": "admin.tsx"
-    },
-    "/landing": {
-      "filePath": "landing.tsx"
     },
     "/products": {
       "filePath": "products.tsx"
