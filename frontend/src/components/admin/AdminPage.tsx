@@ -24,13 +24,13 @@ export default function AdminPage() {
       </section>
       <section className="flex m-10 gap-4">
         <div className="w-1/2">
-          <h2 className="text-2xl font-bold text-stone-600 tracking-wide">
+          <h2 className="text-2xl font-bold text-stone-600 tracking-wide text-center m-8">
             Your products
           </h2>
           <ProductsList />
         </div>
         <div className="w-1/2">
-          <h2 className="text-2xl font-bold text-stone-600 tracking-wide">
+          <h2 className="text-2xl font-bold text-stone-600 tracking-wide text-center m-8">
             Add new product
           </h2>
           <CreateProductForm />
