@@ -58,7 +58,7 @@ export function ItemsSoldChart() {
   }, []);
 
   return (
-    <Card className="flex flex-col chart-container text-stone-600">
+    <Card className="flex flex-col chart-container text-stone-600 font-light">
       <CardHeader className="items-center pb-0">
         <CardTitle>Avocados Sold (kg)</CardTitle>
         <CardDescription>January - October 2024</CardDescription>
