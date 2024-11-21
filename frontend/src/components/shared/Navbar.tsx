@@ -10,7 +10,7 @@ import { Link } from "@tanstack/react-router";
 export default function Navbar() {
   return (
     <>
-      <nav className="border-b-lime-700/50 border-b-2 text-stone-600 px-4 py-3 flex items-center justify-between h-14">
+      <nav className="bg-lime-900/70 font-light text-gray-50 px-4 py-3 flex items-center justify-between h-14">
         <div className="flex items-center space-x-2">
           <img
             src="public/half-avocado.svg"
@@ -24,13 +24,13 @@ export default function Navbar() {
         <div className="flex space-x-4 font-light">
           <Link
             to="/products"
-            className="px-2 rounded hover:bg-lime-900/70 hover:text-gray-50 transition duration-200"
+            className="px-2 rounded hover:bg-gray-50 hover:text-lime-900/70 transition duration-200"
           >
             Products
           </Link>
           <SignedOut>
             <SignInButton mode="redirect" forceRedirectUrl={"/admin"}>
-              <button className="px-2 hover:text-lime-800 transition duration-200">
+              <button className="px-2 rounded hover:bg-gray-50 hover:text-lime-900/70 transition duration-200">
                 Sign in
               </button>
             </SignInButton>
@@ -38,7 +38,7 @@ export default function Navbar() {
           <SignedIn>
             <Link
               to="/admin"
-              className="hover:text-lime-800 transition duration-200"
+              className="px-2 rounded hover:bg-gray-50 hover:text-lime-900/70 transition duration-200"
             >
               Dashboard
             </Link>
