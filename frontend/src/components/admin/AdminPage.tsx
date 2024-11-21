@@ -6,17 +6,14 @@ import CreateProductForm from "./CreateProductForm";
 export default function AdminPage() {
   return (
     <>
-      <main className="bg-slate-100 text-center h-40 flex flex-col items-center justify-center space-y-4">
-        <h1 className="text-3xl font-bold text-stone-600 tracking-wide bg-slate-100">
+      <main className="bg-white text-center h-40 flex flex-col items-center justify-center space-y-4 -mb-10">
+        <h1 className="text-3xl font-bold text-stone-600 tracking-wide bg-white">
           Welcome back, Zava!
         </h1>
-        <p className="text-stone-600 bg-slate-100">
+        <p className="text-stone-600 bg-white font-light">
           This is the admin dashboard. You can manage all the content here.
         </p>
       </main>
-      <h2 className=" ml-10 mt-10 mb-4 text-3xl text-center font-bold text-stone-600 tracking-wide">
-        Dashboard
-      </h2>
       <section className="flex m-10 gap-4">
         <div className="w-1/2">
           <RevenueChart />
