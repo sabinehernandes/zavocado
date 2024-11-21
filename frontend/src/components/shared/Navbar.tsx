@@ -21,10 +21,10 @@ export default function Navbar() {
             ZAVOCADO
           </Link>
         </div>
-        <div className="flex space-x-4 font-light">
+        <div className="flex space-x-4">
           <Link
             to="/products"
-            className="px-2 rounded hover:text-white hover:bg-lime-800 hover:border-lime-800 hover:rounded-2 transition duration-200"
+            className="px-2 rounded hover:bg-lime-900/70 hover:text-gray-50 transition duration-200"
           >
             Products
           </Link>
