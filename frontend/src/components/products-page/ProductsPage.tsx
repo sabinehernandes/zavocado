@@ -25,12 +25,12 @@ export default function ProductsPage() {
 
   return (
     <>
-      <main className="bg-white border-b-lime-700/50 border-b-2 text-center h-96 flex flex-col items-center justify-center space-y-4">
-        <h1 className="text-5xl font-bold text-stone-600 tracking-wide">
+      <main className="bg-white bg-lime-700/60 text-center h-96 flex flex-col items-center justify-center space-y-4">
+        <h1 className="text-5xl font-bold text-gray-50 tracking-wide">
           Enjoy our finest avocado selection
         </h1>
       </main>
-      <h2 className="text-center text-3xl font-light mt-10 text-slate-600">
+      <h2 className="text-center text-3xl font-semibold mt-10 text-slate-600">
         Shop here
       </h2>
       <section className="grid m-10 justify-items-center items-center grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-2 gap-8">
