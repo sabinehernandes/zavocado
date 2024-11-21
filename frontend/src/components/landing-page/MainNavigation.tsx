@@ -35,13 +35,13 @@ export default function MainNavigation() {
         </div>
         <div className="w-1/2 space-y-4 leading-relaxed text-center font-light text-stone-600">
           <h3 className="text-3xl">Where nature meets quality</h3>
-          <p>
+          <p className="px-6">
             At Zava Farms, we believe in the power of nature to produce the
             finest avocados. Grown without synthetic chemicals or pesticides,
             our avocados thrive in healthy, nutrient-rich soil, carefully tended
             to by skilled farmers who prioritize sustainable practices.
           </p>
-          <p>
+          <p className="px-6">
             By choosing organic farming methods, we not only preserve the
             integrity of the land but also promote biodiversity and protect the
             environment for future generations.
