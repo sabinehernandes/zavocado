@@ -35,8 +35,16 @@ export default function ProductsPage() {
 
   return (
     <>
-      <main className="bg-white bg-lime-700/60 text-center h-96 flex flex-col items-center justify-center space-y-4">
-        <h1 className="text-5xl font-bold text-gray-50 tracking-wide">
+      <main
+        className="relative text-center h-96 flex flex-col items-center justify-center space-y-4"
+        style={{
+          backgroundImage: `url('/public/products-page/avocados_products_page.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-gray-500/30 "></div>
+        <h1 className="relative text-5xl font-bold text-gray-50 tracking-wide">
           Enjoy our finest avocado selection
         </h1>
       </main>
