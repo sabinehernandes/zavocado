@@ -70,7 +70,7 @@ export function ProductsList() {
             <TableRow
               key={data.id}
               onClick={() => handleRowClick(data.id)}
-              className={`cursor-pointer h-16 ${selectedRow === data.id ? "bg-zinc-100/50" : ""}`}
+              className={`cursor-pointer h-16 text-stone-600 ${selectedRow === data.id ? "bg-zinc-100/50" : ""}`}
             >
               <TableCell className="font-medium">{data.name}</TableCell>
               <TableCell>{data.price}</TableCell>
