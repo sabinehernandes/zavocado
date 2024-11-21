@@ -25,7 +25,7 @@ export default function MainNavigation() {
       <h2 className="text-center text-3xl text-stone-600 font-light my-12">
         Perfect blend of taste, health and sustainability
       </h2>
-      <div className="flex items-center justify-center px-10 space-x-8 mb-10">
+      <div className="flex items-center justify-center px-10 space-x-8 mb-16">
         <div className="w-1/2">
           <img
             src="public/landing-page/farm.jpg"
