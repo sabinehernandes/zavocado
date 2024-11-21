@@ -56,7 +56,7 @@ export function ProductsList() {
   return (
     <>
       <Toaster />
-      <div className="border-2 border-gray-200 rounded-xl p-4 shadow-md">
+      <div className="border-2 border-gray-200 rounded-xl p-4 shadow-md font-light">
         <Table>
           <TableHeader>
             <TableRow>
@@ -65,7 +65,7 @@ export function ProductsList() {
               </TableHead>
               <TableHead className="font-bold text-base">Price</TableHead>
               <TableHead className="font-bold text-base">Description</TableHead>
-              <TableHead className="sr-only">Actions</TableHead>
+              <TableHead className="">Action</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
