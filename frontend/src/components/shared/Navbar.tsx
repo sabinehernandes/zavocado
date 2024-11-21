@@ -1,3 +1,10 @@
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignOutButton,
+  UserButton,
+} from "@clerk/clerk-react";
 import { Link } from "@tanstack/react-router";
 
 export default function Navbar() {
@@ -21,12 +28,24 @@ export default function Navbar() {
           >
             Products
           </Link>
-          <Link
-            to="/admin"
-            className="hover:text-lime-800 transition duration-200"
-          >
-            Sign In
-          </Link>
+          <SignedOut>
+            <SignInButton mode="redirect" forceRedirectUrl={"/admin"}>
+              <button className="px-2 hover:text-lime-800 transition duration-200">
+                Sign in
+              </button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <Link
+              to="/admin"
+              className="hover:text-lime-800 transition duration-200"
+            >
+              Dashboard
+            </Link>
+            <SignOutButton>
+              <UserButton />
+            </SignOutButton>
+          </SignedIn>
         </div>
       </nav>
     </>
