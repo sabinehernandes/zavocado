@@ -98,7 +98,7 @@ export default function CreateProductForm() {
             required
             className="block border-0 flex-1 rounded-[5px] bg-transparent py-1.5 pl-1 text-stone-600 focus:outline-none
                       file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm
-                      file:font-semibold file:bg-lime-50 file:text-lime-700 hover:file:bg-lime-500/20"
+                      file:font-semibold file:bg-lime-500/20 file:text-lime-700 hover:file:bg-lime-600/40"
           />
         </div>
       </div>
