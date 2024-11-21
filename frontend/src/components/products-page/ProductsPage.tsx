@@ -33,7 +33,7 @@ export default function ProductsPage() {
       <h2 className="text-center text-3xl font-semibold mt-10 text-slate-600">
         Shop here
       </h2>
-      <section className="grid m-10 justify-items-center items-center grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-2 gap-8">
+      <section className="grid m-10 font-light justify-items-center items-center grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-2 gap-8">
         {avocados?.map((avocado) => (
           <ProductCard
             key={avocado.id}
