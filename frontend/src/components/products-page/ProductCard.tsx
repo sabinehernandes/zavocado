@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const fullImageUrl = `${import.meta.env.VITE_IMAGE_BASE_URL}/${imageUrl}`;
 
   return (
-    <div className="flex border border-gray-300 bg-white p-4 rounded-lg w-96 h-80 items-center justify-center">
+    <div className="flex border border-zinc-200 rounded-xl bg-white p-4 w-96 h-80 items-center justify-center">
       <div className="w-32 h-32 flex-shrink-0">
         <img src={fullImageUrl} className="w-full h-full object-cover" />
       </div>
@@ -42,13 +42,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
             id="quantity"
             name="quantity"
             min="1"
-            defaultValue="1"
-            className="border rounded p-1 w-full bg-white"
+            className="border border-zinc-200 rounded p-1 w-full bg-white"
           />
         </div>
         <button
           onClick={() => handleBuy()}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 w-full"
+          className="mt-4 px-4 py-2 bg-lime-700/70 text-white rounded hover:bg-lime-900/70 w-full"
         >
           Buy
         </button>
