@@ -11,7 +11,7 @@ export default function MainNavigation() {
           <div className="bg-slate-100">Organic avocados</div>
           <div className="bg-slate-100">from Zava Farm</div>
         </h3>
-        <button className="bg-zinc-500 text-white px-5 py-1 rounded hover:bg-zinc-800">
+        <button className="px-5 py-1 bg-lime-700/70 text-gray-50 rounded hover:bg-lime-900/70">
           <Link to="/products">Shop now</Link>
         </button>
       </main>
@@ -41,7 +41,7 @@ export default function MainNavigation() {
             aliquid, ipsa corrupti? Aliquid ratione, inventore nam ex iste ipsa
             placeat! Eaque numquam culpa harum asperiores placeat.
           </p>
-          <button className="bg-zinc-500 text-white px-5 py-1 rounded hover:bg-zinc-800">
+          <button className="px-5 py-1 bg-lime-700/70 text-gray-50 rounded hover:bg-lime-900/70">
             <Link to="/products">Shop now</Link>
           </button>
         </div>
