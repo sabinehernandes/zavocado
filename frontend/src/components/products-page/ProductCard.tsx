@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <>
-      <Toaster />
+      <Toaster toastOptions={{ duration: 7000 }} />
       <div className="flex border border-zinc-200 rounded-xl bg-white p-4 w-96 h-80">
         <div className="w-32 h-32 flex-shrink-0 flex items-center">
           <img src={fullImageUrl} className="w-full h-full object-cover" />

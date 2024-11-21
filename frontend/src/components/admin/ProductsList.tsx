@@ -55,7 +55,7 @@ export function ProductsList() {
 
   return (
     <>
-      <Toaster />
+      <Toaster toastOptions={{ duration: 7000 }} />
       <div className="border-2 border-gray-200 rounded-xl p-4 shadow-md font-light">
         <Table>
           <TableHeader>

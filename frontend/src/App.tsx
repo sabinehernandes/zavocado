@@ -4,7 +4,7 @@ import MainNavigation from "./components/landing-page/MainNavigation";
 export default function App() {
   return (
     <>
-      <Toaster />
+      <Toaster toastOptions={{ duration: 7000 }} />
       <MainNavigation />
     </>
   );
