@@ -59,9 +59,11 @@ export function ProductsList() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px]">Name</TableHead>
-            <TableHead>Price</TableHead>
-            <TableHead>Description</TableHead>
+            <TableHead className="w-[100px] font-bold text-base">
+              Name
+            </TableHead>
+            <TableHead className="font-bold text-base">Price</TableHead>
+            <TableHead className="font-bold text-base">Description</TableHead>
             <TableHead className="sr-only">Actions</TableHead>
           </TableRow>
         </TableHeader>

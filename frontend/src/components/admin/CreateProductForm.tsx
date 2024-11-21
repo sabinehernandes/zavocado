@@ -40,7 +40,7 @@ export default function CreateProductForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4 mt-5 text-stone-600">
       <div className="border-0 border-gray-900/10">
-        <label htmlFor="name" className="block font-medium">
+        <label htmlFor="name" className="block font-bold text-base">
           Name
         </label>
         <div className="flex border rounded-[5px] shadow-sm mt-3">
@@ -55,7 +55,7 @@ export default function CreateProductForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="price" className="block font-medium">
+        <label htmlFor="price" className="block font-bold text-base">
           Price
         </label>
         <div className="flex border rounded-[5px] shadow-sm mt-3">
@@ -72,7 +72,7 @@ export default function CreateProductForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="description" className="block font-medium">
+        <label htmlFor="description" className="block font-bold text-base">
           Description
         </label>
         <div className="flex border rounded-[5px] shadow-sm mt-3">
@@ -86,7 +86,7 @@ export default function CreateProductForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="image" className="block font-medium">
+        <label htmlFor="image" className="block font-bold text-base">
           Image
         </label>
         <div className="flex border-0 rounded-[5px] mt-3">
