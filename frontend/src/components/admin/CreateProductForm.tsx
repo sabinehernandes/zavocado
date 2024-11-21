@@ -38,7 +38,10 @@ export default function CreateProductForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 mt-5 text-stone-600">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 mt-5 text-stone-600 border-2 border-gray-200 rounded-xl p-4 shadow-md"
+    >
       <div className="border-0 border-gray-900/10">
         <label htmlFor="name" className="block font-bold text-base">
           Name
@@ -81,7 +84,7 @@ export default function CreateProductForm() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
-            className="block border-0 flex-1 rounded-[5px] bg-transparent py-1.5 pl-1 focus:ring-2 focus:ring-lime-700/50"
+            className="block h-40 border-0 flex-1 rounded-[5px] bg-transparent py-1.5 pl-1 focus:ring-2 focus:ring-lime-700/50"
           />
         </div>
       </div>

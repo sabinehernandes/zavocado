@@ -56,42 +56,44 @@ export function ProductsList() {
   return (
     <>
       <Toaster />
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[100px] font-bold text-base">
-              Name
-            </TableHead>
-            <TableHead className="font-bold text-base">Price</TableHead>
-            <TableHead className="font-bold text-base">Description</TableHead>
-            <TableHead className="sr-only">Actions</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {avocados?.map((data) => (
-            <TableRow
-              key={data.id}
-              onClick={() => handleRowClick(data.id)}
-              className={`cursor-pointer h-16 text-stone-600 ${selectedRow === data.id ? "bg-zinc-100/50" : ""}`}
-            >
-              <TableCell className="font-medium">{data.name}</TableCell>
-              <TableCell>{data.price}</TableCell>
-              <TableCell>{data.description}</TableCell>
-              <TableCell>
-                {selectedRow === data.id && (
-                  <button
-                    onClick={(event) => handleDelete(data.id, event)}
-                    className="bg-red-700 text-white rounded px-2 py-1"
-                  >
-                    Delete
-                  </button>
-                )}
-              </TableCell>
+      <div className="border-2 border-gray-200 rounded-xl p-4 shadow-md">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[100px] font-bold text-base">
+                Name
+              </TableHead>
+              <TableHead className="font-bold text-base">Price</TableHead>
+              <TableHead className="font-bold text-base">Description</TableHead>
+              <TableHead className="sr-only">Actions</TableHead>
             </TableRow>
-          ))}
-        </TableBody>
-        <TableFooter></TableFooter>
-      </Table>
+          </TableHeader>
+          <TableBody>
+            {avocados?.map((data) => (
+              <TableRow
+                key={data.id}
+                onClick={() => handleRowClick(data.id)}
+                className={`cursor-pointer h-16 text-stone-600 ${selectedRow === data.id ? "bg-zinc-100/50" : ""}`}
+              >
+                <TableCell className="font-medium">{data.name}</TableCell>
+                <TableCell>{data.price}</TableCell>
+                <TableCell>{data.description}</TableCell>
+                <TableCell>
+                  {selectedRow === data.id && (
+                    <button
+                      onClick={(event) => handleDelete(data.id, event)}
+                      className="bg-red-700 text-white rounded px-2 py-1"
+                    >
+                      Delete
+                    </button>
+                  )}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+          <TableFooter></TableFooter>
+        </Table>
+      </div>
     </>
   );
 }
