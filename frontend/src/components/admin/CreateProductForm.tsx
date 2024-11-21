@@ -41,17 +41,19 @@ export default function CreateProductForm() {
     <>
       <Toaster />
       <form onSubmit={handleSubmit} className="space-y-4 mt-5">
-        <div>
+        <div className="border-b border-gray-900/10">
           <label htmlFor="name" className="block font-medium text-gray-700">
             Name
           </label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="mt-1 block w-full h-8 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          />
+          <div className="flex border-0 rounded-md shadow-sm ring-1 ring-inset mt-3 ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="block border-0 rounded-md flex-1 bg-transparent py-1.5 pl-1 text-gray-900"
+            />
+          </div>
         </div>
         <div>
           <label htmlFor="price" className="block font-medium text-gray-700">
