@@ -1,4 +1,5 @@
 import React from "react";
+import toast from "react-hot-toast";
 
 interface ProductCardProps {
   imageUrl: string;
@@ -6,6 +7,12 @@ interface ProductCardProps {
   price: number;
   description: string;
 }
+
+const handleBuy = () => {
+  console.log("Buying avocados...");
+  // alert("Your avocados are on their way! 🥑");
+  toast.error("Your avocados are on their way! 🥑");
+};
 
 const ProductCard: React.FC<ProductCardProps> = ({
   imageUrl,
@@ -39,7 +46,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
             className="border rounded p-1 w-full bg-white"
           />
         </div>
-        <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 w-full">
+        <button
+          onClick={() => handleBuy()}
+          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 w-full"
+        >
           Buy
         </button>
       </div>
