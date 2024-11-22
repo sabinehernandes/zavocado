@@ -78,7 +78,24 @@ export function ProductsList() {
                 <TableCell className="font-medium">{data.name}</TableCell>
                 <TableCell>{data.price}</TableCell>
                 <TableCell>{data.description}</TableCell>
-                <TableCell>
+                <TableCell className="w-[70px] h-16 text-center">
+                  {selectedRow === data.id ? (
+                    <button
+                      onClick={(event) => handleDelete(data.id, event)}
+                      className="bg-red-700 text-white rounded text-sm px-2 py-1 w-full"
+                    >
+                      Delete
+                    </button>
+                  ) : (
+                    <img
+                      src="/menu-kebab.svg"
+                      alt="menu"
+                      className="w-6 h-6 mx-auto cursor-pointer"
+                    />
+                  )}
+                </TableCell>
+
+                {/* <TableCell>
                   {selectedRow === data.id && (
                     <button
                       onClick={(event) => handleDelete(data.id, event)}
@@ -87,7 +104,7 @@ export function ProductsList() {
                       Delete
                     </button>
                   )}
-                </TableCell>
+                </TableCell> */}
               </TableRow>
             ))}
           </TableBody>
