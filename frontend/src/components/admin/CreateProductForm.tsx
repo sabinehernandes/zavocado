@@ -22,6 +22,10 @@ export default function CreateProductForm() {
     mutationFn: createAvocado,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["avocados"] });
+      setName("");
+      setPrice(0);
+      setDescription("");
+      setImage("");
     },
   });
 
