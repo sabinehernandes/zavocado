@@ -65,7 +65,7 @@ export default function CreateProductForm() {
           </label>
           <div className="flex border rounded-[5px] shadow-sm mt-3">
             <input
-              type="number"
+              type="string"
               id="price"
               value={price}
               onChange={(e) =>
