@@ -56,8 +56,8 @@ export function ProductsList() {
   return (
     <>
       <Toaster toastOptions={{ duration: 7000 }} />
-      <div className="border-2 border-gray-200 rounded-xl p-4 shadow-md font-light">
-        <Table>
+      <div className="border-2 border-gray-200 rounded-xl p-4 shadow-md font-light max-h-[650px] overflow-auto">
+        <Table className="overflow-hidden">
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px] font-bold text-base">
