@@ -50,7 +50,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
           <button
             onClick={() => handleBuy()}
-            className="mt-4 px-4 py-2 bg-lime-700/70 text-white rounded hover:bg-lime-900/70 w-full"
+            className="mt-4 px-4 py-2 bg-lime-700/70 text-white rounded hover:bg-lime-900/70 w-full transition duration-300 ease-in-out"
           >
             Buy
           </button>

@@ -24,13 +24,13 @@ export default function Navbar() {
         <div className="flex space-x-4 font-light">
           <Link
             to="/products"
-            className="px-2 rounded hover:bg-gray-50 hover:text-lime-900/70 transition duration-200"
+            className="px-2 rounded hover:bg-gray-50 hover:text-lime-900/70 transition duration-300 ease-in-out"
           >
             Products
           </Link>
           <SignedOut>
             <SignInButton mode="redirect" forceRedirectUrl={"/admin"}>
-              <button className="px-2 rounded hover:bg-gray-50 hover:text-lime-900/70 transition duration-200">
+              <button className="px-2 rounded hover:bg-gray-50 hover:text-lime-900/70 transition duration-300 ease-in-out">
                 Sign in
               </button>
             </SignInButton>
@@ -38,7 +38,7 @@ export default function Navbar() {
           <SignedIn>
             <Link
               to="/admin"
-              className="px-2 rounded hover:bg-gray-50 hover:text-lime-900/70 transition duration-200"
+              className="px-2 rounded hover:bg-gray-50 hover:text-lime-900/70 transition duration-300 ease-in-out"
             >
               Dashboard
             </Link>

@@ -11,7 +11,7 @@ export default function MainNavigation() {
           <div>Organic avocados</div>
           <div>from Zava Farm</div>
         </h3>
-        <button className="px-5 py-1 bg-lime-700/70 text-gray-50 rounded hover:bg-lime-900/70">
+        <button className="px-5 py-1 bg-lime-700/70 text-gray-50 rounded hover:bg-lime-900/70 transition duration-300 ease-in-out">
           <Link to="/products">Shop now</Link>
         </button>
       </main>
@@ -46,7 +46,7 @@ export default function MainNavigation() {
             integrity of the land but also promote biodiversity and protect the
             environment for future generations.
           </p>
-          <button className="px-5 py-1 bg-lime-700/70 text-gray-50 rounded hover:bg-lime-900/70">
+          <button className="px-5 py-1 bg-lime-700/70 text-gray-50 rounded hover:bg-lime-900/70 transition duration-300 ease-in-out">
             <Link to="/products">Shop now</Link>
           </button>
         </div>

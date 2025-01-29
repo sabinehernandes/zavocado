@@ -107,14 +107,14 @@ export default function CreateProductForm() {
               required
               className="block border-0 flex-1 rounded-[5px] bg-transparent py-1.5 pl-1 text-stone-600 focus:outline-none
                       file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm
-                      file:font-semibold file:bg-lime-500/20 file:text-lime-700 hover:file:bg-lime-600/40"
+                      file:font-semibold file:bg-lime-500/20 file:text-lime-700 hover:file:bg-lime-600/40 file:transition file:duration-300 file:ease-in-out"
             />
           </div>
         </div>
         <div className="text-center">
           <button
             type="submit"
-            className="mt-4 px-4 py-2 bg-lime-700/70 text-white rounded hover:bg-lime-900/70 min-w-40"
+            className="mt-4 px-4 py-2 bg-lime-700/70 text-white rounded hover:bg-lime-900/70 min-w-40 transition duration-300 ease-in-out"
           >
             Submit
           </button>
